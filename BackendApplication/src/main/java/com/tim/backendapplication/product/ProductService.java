@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 @Service
 public class ProductService {
     private final ProductRepository productRepository;
@@ -26,12 +25,12 @@ public class ProductService {
         return productRepository.getById(productId);
     }
 
-    public String getCategoryString(int categoryId) {
+    private String getCategoryString(int categoryId) {
         return categoryRepository.getById(categoryId).getName();
 
     }
 
-    public String getPositionString(int positionId) {
+    private String getPositionString(int positionId) {
         return positionRepository.getById(positionId).getName();
     }
 
@@ -43,8 +42,7 @@ public class ProductService {
 
     public ProductDTO retrieveProductResponse(int productId) {
         ProductEntity entity = getProduct(productId);
-        ProductDTO product = convertToProductDTO(entity);
-        return product;
+        return convertToProductDTO(entity);
     }
 
     private ProductDTO convertToProductDTO(ProductEntity entity) {
