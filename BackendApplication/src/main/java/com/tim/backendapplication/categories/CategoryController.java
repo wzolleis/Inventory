@@ -22,4 +22,8 @@ public class CategoryController {
     public Optional<CategoryEntity> allProducts(@PathVariable int id) {
         return categoryRepository.findById(id);
     }
+    @GetMapping("/category/all")
+    public List<CategoryEntity> allCategories() {
+        return categoryRepository.findAll();
+    }
 }

@@ -5,7 +5,6 @@ import DataModel from "@/store/modules/models/DataModel";
 export default {
 
     methods: {
-
         async storeData(type, id) {
             this.registerStoreModule(storeDefinition[type].storePath(id), DataModel)
             await APIRequests.getURL(storeDefinition[type].apiURL(id))
