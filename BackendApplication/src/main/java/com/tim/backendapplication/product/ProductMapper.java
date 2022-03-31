@@ -18,8 +18,21 @@ public class ProductMapper {
         productDTO.setImageURL(entity.getImageURL());
         productDTO.setOccupation(entity.getOccupation());
         return productDTO;
-
     }
 
-    // mapToEntity
+    public ProductEntity mapToEntity(ProductDTO productDTO) {
+        ProductEntity productEntity = new ProductEntity();
+        productEntity.setId(productDTO.getId());
+        productEntity.setName(productDTO.getName());
+        productEntity.setDescription(productDTO.getDescription());
+        productEntity.setCategoryID(productDTO.getCategory().id());
+        productEntity.setPositionID(productDTO.getPosition().id());
+        productEntity.setQuantity(productDTO.getQuantity());
+        productEntity.setJobID(productDTO.getJobID());
+        productEntity.setSerialNumber(productDTO.getSerialNumber());
+        productEntity.setInventoryNumber(productDTO.getInventoryNumber());
+        productEntity.setImageURL(productDTO.getImageURL());
+        productEntity.setOccupation(productDTO.getOccupation());
+        return productEntity;
+    }
 }
