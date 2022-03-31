@@ -34,7 +34,7 @@
         <input type="text" v-model="product.quantity" class="w-full rounded bg-gray-200 p-2 font-bold">
       </div>
       <div class="mt-3">
-        <edit-buttons @save="saveProduct"></edit-buttons>
+        <edit-buttons @save="saveProduct" @delete="deleteProduct"></edit-buttons>
       </div>
 
 
@@ -49,7 +49,6 @@
 <script>
 import storeData from "@/JS/mixins/storeData";
 import EditButtons from "@/components/Edit/EditButtons";
-import store from "@/store";
 
 
 export default {
@@ -86,9 +85,11 @@ export default {
     },
 
     saveProduct(){
-      store.commit(this.setData("product", this.$route.params.id), this.product)
+     this.setData("product", this.$route.params.id, this.product)
       console.log(this.getData("product", this.$route.params.id));
-
+    },
+    deleteProduct(){
+      this.deleteData("product", this.$route.params.id)
     }
 
 

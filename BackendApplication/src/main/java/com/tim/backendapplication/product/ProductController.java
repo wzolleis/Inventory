@@ -26,6 +26,17 @@ public class ProductController {
         ProductDTO response = productService.retrieveProductResponse(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+    @PostMapping("/product/{id}")
+    public ResponseEntity<String> saveProduct(@PathVariable int id, @RequestBody ProductDTO productDTO){
+        productService.setProduct(productDTO);
+        return ResponseEntity.ok("Product saved");
+    }
+
+    @DeleteMapping("/product/{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable int id){
+        productService.deleteProduct(id);
+        return ResponseEntity.ok("Product deleted");
+    }
 
     @GetMapping("/jobid/{jobID}")
     public ResponseEntity<List<ProductDTO>> jobID(@PathVariable int jobID) {

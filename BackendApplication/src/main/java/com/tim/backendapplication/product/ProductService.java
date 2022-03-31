@@ -3,6 +3,7 @@ package com.tim.backendapplication.product;
 import com.tim.backendapplication.options.CategoryRepository;
 import com.tim.backendapplication.position.PositionRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,6 +25,13 @@ public class ProductService {
     public ProductEntity getProduct(int productId) {
         return productRepository.getById(productId);
     }
+    public void setProduct( ProductDTO productDTO){
+        productRepository.save(convertDTOToProduct(productDTO));
+    }
+    public void deleteProduct(int productId){
+        productRepository.deleteById(productId);
+    }
+
 
     private String getCategoryString(int categoryId) {
         return categoryRepository.getById(categoryId).getName();
@@ -50,6 +58,11 @@ public class ProductService {
         String positionName = getPositionString(entity.getPositionID());
         return productMapper.mapToDto(entity, positionName, categoryName);
     }
+    private ProductEntity convertDTOToProduct(ProductDTO dto){
+        return productMapper.mapToEntity(dto);
+    }
+
+
 
 
 }

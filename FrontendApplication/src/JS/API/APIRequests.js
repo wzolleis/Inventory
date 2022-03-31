@@ -6,12 +6,29 @@ export default new (class APIRequests {
 
     async getURL(url) {
          return await axios.get("http://localhost:8080/api/" + url).then((response) => {
-             console.log(response.data);
              store.commit("SET_RESPONSE", response.data)
          })
             .catch((error) => {
                 console.log(error);
             })
+    }
+
+    async setData(url, data){
+        console.log("Data:", data);
+        await axios({
+           method: "post",
+           url: "http://localhost:8080/api/" + url ,
+           data: data
+       })
+
+    }
+
+    async deleteRequest(url){
+        await axios({
+            method: "delete",
+            url: "http://localhost:8080/api/" + url,
+        })
+
     }
 
     async setStore(commit)
