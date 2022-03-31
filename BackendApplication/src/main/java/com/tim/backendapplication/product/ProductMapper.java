@@ -1,6 +1,6 @@
 package com.tim.backendapplication.product;
 
-import com.tim.backendapplication.categories.CategoryDTO;
+import com.tim.backendapplication.options.CategoryDTO;
 import com.tim.backendapplication.position.PositionDTO;
 
 public class ProductMapper {

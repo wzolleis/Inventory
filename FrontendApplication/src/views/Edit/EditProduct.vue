@@ -4,7 +4,7 @@
 
 <script>
 
-import ProductEditComponent from "@/components/Edit/ProductEditComponent";
+import ProductEditComponent from "@/components/Edit/EditComponent";
 
 export default {
   name: "ProductOverview",

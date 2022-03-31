@@ -10,10 +10,25 @@ export default {
             await APIRequests.getURL(storeDefinition[type].apiURL(id))
             await APIRequests.setStore(storeDefinition[type].mutation(id))
         },
+
+
+
+
+
         getData(type, id){
             console.log("Data returned by getData: ", storeDefinition[type].getter(id));
             return storeDefinition[type].getter(id)
         },
+
+        setData(type, id){
+            return storeDefinition[type].mutation(id)
+        },
+
+
+
+
+
+
         registerStoreModule(moduleName, storeModule) {
             const store = this.$store;
 

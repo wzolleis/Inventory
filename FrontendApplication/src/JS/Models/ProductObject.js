@@ -30,8 +30,8 @@ export const storeDefinition = {
         ...buildMethods("installation")
 
     },
-    category: {
-        ...buildMethods("category")
+    options: {
+        ...buildMethods("options")
     },
     position: {
         ...buildMethods("position")

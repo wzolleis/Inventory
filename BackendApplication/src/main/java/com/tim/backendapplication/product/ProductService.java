@@ -1,6 +1,6 @@
 package com.tim.backendapplication.product;
 
-import com.tim.backendapplication.categories.CategoryRepository;
+import com.tim.backendapplication.options.CategoryRepository;
 import com.tim.backendapplication.position.PositionRepository;
 import org.springframework.stereotype.Service;
 

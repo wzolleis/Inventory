@@ -1,4 +1,4 @@
-package com.tim.backendapplication.categories;
+package com.tim.backendapplication.options;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
